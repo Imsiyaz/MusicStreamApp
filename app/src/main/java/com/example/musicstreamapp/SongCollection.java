@@ -1,10 +1,13 @@
 package com.example.musicstreamapp;
 
 import android.content.Intent;
+import android.util.Log;
 
 public class SongCollection
 {
     private Songs songs[] = new Songs[3];
+
+
 
     public SongCollection()
     {
@@ -33,14 +36,21 @@ public class SongCollection
 
     }
 
+    public Songs getCurrentSong(int currentSongId)
+    {
+        return songs[currentSongId];
+    }
+
     public int searchSongById(String id)
     {
         for(int index=0; index < songs.length; index++)
         {
             Songs tempSongs = songs[index];
-            if (tempSongs.getId().equals(id));
 
-            return index;
+            if (tempSongs.getId().equals(id))
+            {
+                return index;
+            }
         }
         return -1;
     }

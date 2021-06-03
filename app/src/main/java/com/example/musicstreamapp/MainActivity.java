@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity
         String resourceId = getResources().getResourceEntryName(myView.getId());//gets id of image button
         int currentArrayIndex = songCollection.searchSongById(resourceId);//gets array index from SongCollection
         Log.d("Temasek" , "The id of the pressed ImageButton is : " + resourceId);
-        Log.e( "Temasek",resourceId);
+        Log.d("Temasek", "" + currentArrayIndex);
+
+        sendDataToActivity(currentArrayIndex);
     }
 
 
